@@ -1,35 +1,96 @@
 
 
-document.querySelector(".menubar").addEventListener("click", function() {
-    var linksNav = document.querySelector(".links_nav");
-    linksNav.classList.toggle("showing");
+document.querySelector(".menubar" || "link_nav_home").addEventListener("click", function() {
+    var linksNav = document.querySelector(".links_nav")
+    linksNav.classList.toggle("showing")
 
-    var bxone = document.querySelector(".bx_one");
-    var bxtwo = document.querySelector(".bx_two");
+    var bxone = document.querySelector(".bx_one")
+    var bxtwo = document.querySelector(".bx_two")
     
     // Get the computed style of bx_one
-    var style1 = window.getComputedStyle(bxone);
+    var style1 = window.getComputedStyle(bxone)
     // Get display style
-    var bxoneDisplay = style1.getPropertyValue("display");
+    var bxoneDisplay = style1.getPropertyValue("display")
     
     if (bxoneDisplay === "none") {
-        bxone.style.display = "block";
-        bxtwo.style.display = "none";
+        bxone.style.display = "block"
+        bxtwo.style.display = "none"
     } else {
-        bxone.style.display = "none";
-        bxtwo.style.display = "block";
+        bxone.style.display = "none"
+        bxtwo.style.display = "block"
+    }
+    
+})
+
+document.querySelector(".link_nav_home").addEventListener("click", function() {
+    var linksNav = document.querySelector(".links_nav")
+    linksNav.classList.toggle("showing");
+
+    var bxone = document.querySelector(".bx_one")
+    var bxtwo = document.querySelector(".bx_two")
+    
+    // Get the computed style of bx_one
+    var style1 = window.getComputedStyle(bxone)
+    // Get display style
+    var bxoneDisplay = style1.getPropertyValue("display")
+    
+    if (bxoneDisplay === "none") {
+        bxone.style.display = "block"
+        bxtwo.style.display = "none"
+    } else {
+        bxone.style.display = "none"
+        bxtwo.style.display = "block"
     }
     
 });
 
+document.querySelector(".link_nav_about").addEventListener("click", function() {
+    var linksNav = document.querySelector(".links_nav")
+    linksNav.classList.toggle("showing")
+
+    var bxone = document.querySelector(".bx_one")
+    var bxtwo = document.querySelector(".bx_two")
+    
+    // Get the computed style of bx_one
+    var style1 = window.getComputedStyle(bxone)
+    // Get display style
+    var bxoneDisplay = style1.getPropertyValue("display")
+    
+    if (bxoneDisplay === "none") {
+        bxone.style.display = "block"
+        bxtwo.style.display = "none"
+    } else {
+        bxone.style.display = "none"
+        bxtwo.style.display = "block"
+    }
+    
+});
+
+window.onscroll = function() {scrollFunction()}
+function scrollFunction() {
+    var hide_two = document.querySelector(".hide_one")
+    var hide_one = document.querySelector(".hide_two")
+    if (document.documentElement.scrollTop > 150) {
+        hide_two.classList.add("show_back")
+        hide_one.classList.add("show_back")
+    } else {
+        hide_two.classList.remove("show_back")
+        hide_one.classList.remove("show_back")
+    }
+}
+
+function topFunction() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0;
+}
 
 
 
 
-const words = ["I'm Frontend Developer", "I'm Backend Developer", "I'm Fullstack Developer"]; // Array of words
-const textElement = document.querySelector(".type_g"); 
-let wordIndex = 0; 
-let letterIndex = 0; 
+const words = ["I'm Frontend Developer", "I'm Backend Developer", "I'm Fullstack Developer"] // Array of words
+const textElement = document.querySelector(".type_g")
+let wordIndex = 0;
+let letterIndex = 0;
 
 
 function type(){
@@ -41,41 +102,41 @@ function type(){
 
 function typeWord() {
     if (wordIndex < words.length) {
-        const word = words[wordIndex];
-        const currentText = word.substring(0, letterIndex + 1);
-        textElement.textContent = currentText;
+        const word = words[wordIndex]
+        const currentText = word.substring(0, letterIndex + 1)
+        textElement.textContent = currentText
 
         if (letterIndex === word.length) {
          
-            setTimeout(eraseWord, 500); 
+            setTimeout(eraseWord, 500)
         } else {
             // Type the next letter
-            setTimeout(typeWord, 200); 
+            setTimeout(typeWord, 200)
             letterIndex++;
         }
     } else {
         // All words have been typed
         wordIndex = 0; 
-        setTimeout(typeWord, 500); 
+        setTimeout(typeWord, 500)
     }
 }
 
 function eraseWord() {
     if (letterIndex >= 0) {
-        const word = words[wordIndex];
-        const currentText = word.substring(0, letterIndex);
-        textElement.textContent = currentText;
+        const word = words[wordIndex]
+        const currentText = word.substring(0, letterIndex)
+        textElement.textContent = currentText
 
         if (letterIndex === 0 && wordIndex === words.length - 1) {
-            wordIndex = 0;
-            letterIndex = 0; 
-            setTimeout(typeWord, 500); 
-        } else if (letterIndex === 0   ) {
+            wordIndex = 0
+            letterIndex = 0;
+            setTimeout(typeWord, 500)
+        } else if (letterIndex === 0) {
             wordIndex++;
-            setTimeout(typeWord, 200); 
+            setTimeout(typeWord, 200)
         } else {
             // Erase the next letter
-            setTimeout(eraseWord, 200); 
+            setTimeout(eraseWord, 200)
             letterIndex--;
         }
     }
