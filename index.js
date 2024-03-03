@@ -42,7 +42,7 @@ document.querySelector(".link_nav_home").addEventListener("click", function() {
         bxtwo.style.display = "block"
     }
     
-});
+})
 
 document.querySelector(".link_nav_about").addEventListener("click", function() {
     var linksNav = document.querySelector(".links_nav")
@@ -64,24 +64,63 @@ document.querySelector(".link_nav_about").addEventListener("click", function() {
         bxtwo.style.display = "block"
     }
     
-});
+})
+document.querySelector(".link_nav_project").addEventListener("click", function() {
+    var linksNav = document.querySelector(".links_nav")
+    linksNav.classList.toggle("showing")
+
+    var bxone = document.querySelector(".bx_one")
+    var bxtwo = document.querySelector(".bx_two")
+    
+    // Get the computed style of bx_one
+    var style1 = window.getComputedStyle(bxone)
+    // Get display style
+    var bxoneDisplay = style1.getPropertyValue("display")
+    
+    if (bxoneDisplay === "none") {
+        bxone.style.display = "block"
+        bxtwo.style.display = "none"
+    } else {
+        bxone.style.display = "none"
+        bxtwo.style.display = "block"
+    }
+    
+})
+
+document.querySelector(".link_nav_contact").addEventListener("click", function() {
+    var linksNav = document.querySelector(".links_nav")
+    linksNav.classList.toggle("showing")
+
+    var bxone = document.querySelector(".bx_one")
+    var bxtwo = document.querySelector(".bx_two")
+    
+    // Get the computed style of bx_one
+    var style1 = window.getComputedStyle(bxone)
+    // Get display style
+    var bxoneDisplay = style1.getPropertyValue("display")
+    
+    if (bxoneDisplay === "none") {
+        bxone.style.display = "block"
+        bxtwo.style.display = "none"
+    } else {
+        bxone.style.display = "none"
+        bxtwo.style.display = "block"
+    }
+    
+})
 
 window.onscroll = function() {scrollFunction()}
 function scrollFunction() {
     var hide_two = document.querySelector(".hide_one")
     var hide_one = document.querySelector(".hide_two")
-    if (document.documentElement.scrollTop > 150) {
+    if (document.documentElement.scrollTop >= 400) {
         hide_two.classList.add("show_back")
         hide_one.classList.add("show_back")
-    } else {
+    }else {
         hide_two.classList.remove("show_back")
         hide_one.classList.remove("show_back")
     }
-}
 
-function topFunction() {
-    document.body.scrollTop = 0
-    document.documentElement.scrollTop = 0;
 }
 
 
@@ -91,14 +130,6 @@ const words = ["I'm Frontend Developer", "I'm Backend Developer", "I'm Fullstack
 const textElement = document.querySelector(".type_g")
 let wordIndex = 0;
 let letterIndex = 0;
-
-
-function type(){
-    if(words.length == 2){
-        
-    }
-}
-
 
 function typeWord() {
     if (wordIndex < words.length) {
@@ -144,5 +175,7 @@ function eraseWord() {
 
 
 setTimeout(typeWord, 200); 
+
+
 
 

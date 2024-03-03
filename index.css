@@ -45,6 +45,21 @@ a{
     left: -80px;
     transition:  0.5s ease-in-out;
 }
+.links_nav li::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 0%;
+    height: 3px;
+    background-color: var(--secondaryColor);
+    display: block;
+    transition: 0.5s ease-in-out;
+    
+}
+.links_nav li:hover::after{
+    width: 90%; 
+}
 .links_nav.showing{
     left: 10px
 }
@@ -70,6 +85,7 @@ a{
     color: var(--backcolor);
 }
 
+/* Hearder Style */
 .header_main {
     max-width: 90%;
     height: 100vh;
@@ -168,22 +184,25 @@ a{
         font-size: 1.5rem;
     }
 }
-/* about */
+/* About Style */
 .about_me_container{
     width: 100%;
     max-height: 100vh;
     padding: 3rem 0 5rem 0;
     display: grid;    
     align-items: auto;
-
+    display: grid;
+    width: 100%;
+    height: 90vh;
+    align-self: center;
 }
 
 .about_me_row{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 0 10rem 2rem 10rem;
+    margin: 0 10rem 0rem 10rem;
     justify-content: center;
-    background-color: #fcb6a89c;
+    /* background-color: #fcb6a89c; */
     padding-bottom: 3rem;
     backdrop-filter: blur(500px);
     min-height: auto;
@@ -193,9 +212,9 @@ a{
     background-color: var(--whiteColor);
     max-width: 390px;
     align-items: center;
-    margin-top: 1.9rem;
     position: relative;
     overflow: hidden;
+    border: 3px solid #fcb6a8;
 }
 
 .about_info h1, .about_my_hobby h1{
@@ -251,3 +270,141 @@ a{
 .hide_one.show_back, .hide_two.show_back{
     right: 100%;
 }
+
+/* Project Style */
+.project_container{  
+    display: grid;
+    width: 100%;
+    height: 90vh;
+}
+
+.project_content_row{
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: auto; 
+    width: 90%;
+    gap: 2rem;
+
+}
+.item_project{
+    margin: auto;
+    width: 100%;
+}
+.item_project .item_project_circle{
+    width: 70%;
+    height: 210px;
+    margin: auto;
+    background: #ffffff;
+    border: 2px solid #a200ff8f;
+    border-radius: 100%;
+    display: grid;
+    box-shadow: 5px 5px 5px 2px #0000008e;
+    animation: item_project_circle_L 1s infinite
+}
+.title_project_links{
+    align-self: center;
+    margin: auto;
+    text-align: center;
+}
+.title_project_links h1{
+    font-style: italic;
+    margin-bottom: .5rem;
+    font-family: var(--primaryFont);
+}
+.title_project_links a{ 
+    color: #000000;    
+    font-family: var(--secondaryFont);
+    font-style: italic;
+}
+@keyframes item_project_circle_L{
+    0% { border: 2px solid #ffe6008f;}
+    25% { border: 2px solid #00ff2a8f;}
+    50% { border: 2px solid #003cff8f;}
+    100% { border: 2px solid #ff00bf8f;}
+}
+
+
+
+/* Constact Style */
+.contact_container{
+    margin: 0 1rem;
+}
+
+.contact_content{
+    display: grid;
+    width: 100%;
+    height: 90vh;
+}
+.contact_box{
+    align-self: center;
+    margin: auto;
+    width: 35%;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+.name_contact_picture{
+    display: flex;
+    padding: 1.5rem 2rem;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.name_contact h2{
+    font-family: var(--primaryFont);
+    font-size: 1.3rem;
+}
+.name_contact h6{
+    font-family: var(--secondaryFont);
+    font-size: .9rem;
+    font-style: italic;
+}
+
+.img_contact img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+.contact_icon{
+    margin: .3rem;
+}
+.contact_ul{
+    text-align: center;
+}
+.contact_ul a{
+    margin: 0 1.5rem;
+}
+.contact_ul a i{
+    font-size: 2rem;
+    color: var(--backcolor)
+}
+.contact_emial_phone{
+    margin: .8rem 4rem;
+    display: flex;
+    justify-content: space-between;
+}
+.contact_emial_phone h3{
+    font-size: .9rem;
+    font-family: var(--primaryFont);
+    font-style: italic;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
